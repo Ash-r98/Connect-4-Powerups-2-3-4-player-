@@ -296,7 +296,7 @@ def findwin():
     if rowsize >= 4 and colsize >= 4: # If diagonal wins are possible
         for offset in range(3-rowsize, rowsize-3):
             for i in range(colsize):
-                if i >= rowsize:
+                if i >= rowsize - 4:
                     break
                 temp = i+offset
                 if temp < colsize:
@@ -326,9 +326,13 @@ def findwin():
                         v = 0
                         t = 0
                     endgame(x, o, v, t)
+            x = 0
+            o = 0
+            v = 0
+            t = 0
         for offset in range(3-rowsize, rowsize-3):
             for i in range(colsize):
-                if i >= rowsize:
+                if i - 4 >= rowsize:
                     break
                 temp = i+offset
                 if temp < colsize:
@@ -358,6 +362,10 @@ def findwin():
                         v = 0
                         t = 0
                     endgame(x, o, v, t)
+            x = 0
+            o = 0
+            v = 0
+            t = 0
 
 
 # Board size
